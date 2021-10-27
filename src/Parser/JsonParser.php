@@ -96,6 +96,7 @@ class JsonParser
         }
 
         $object = new $propertyMeta->phpType();
+        $value = (is_array($value)) ? $value : [$value];
         self::assignProperties($object, $value);
         return $object;
     }
